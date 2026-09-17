@@ -45,6 +45,9 @@ class Settings(BaseSettings):
 
     QDRANT_PORT: int = 6333
     QDRANT_HOST: str = "localhost"
+    
+    MCP_SEARCH_URL: str = "http://127.0.0.1:7861/sse"
+    MCP_SCRAPER_URL: str = "http://127.0.0.1:7860/sse"
 
     TAVILY_API_KEY: str = "********"
     FIRECRAWL_API_KEY: str = "********"

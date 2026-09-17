@@ -380,8 +380,8 @@ async def initialize_graph():
     global _mcp_tools
     if _graph is None:
         _mcp_tools = MCPTools(mcp_configs=[
-            MCPConfig(client_name="Researcher", server_url="http://127.0.0.1:7861/sse"),
-            MCPConfig(client_name="Scrapper", server_url=f"http://127.0.0.1:7860/sse") # http://127.0.0.1:7860/sse or https://mcp.firecrawl.dev/{settings.FIRECRAWL_API_KEY}/sse
+            MCPConfig(client_name="Researcher", server_url=settings.MCP_SEARCH_URL),
+            MCPConfig(client_name="Scrapper", server_url=settings.MCP_SCRAPER_URL) # http://127.0.0.1:7860/sse or https://mcp.firecrawl.dev/{settings.FIRECRAWL_API_KEY}/sse
         ])
         _graph = await create_graph()
         print("✅ LangGraph with MCP tools initialized successfully!")
