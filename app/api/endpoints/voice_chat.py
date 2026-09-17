@@ -1,5 +1,5 @@
 from typing import Annotated
-
+from uuid import uuid4
 from fastapi import APIRouter, Depends
 
 from app.api.deps import get_current_user
@@ -18,7 +18,7 @@ async def chat_completions(
     current_user: Annotated[DBUser, Depends(get_current_user)]
 ) -> LivekitToken:
     logger.info(f"Received generate livekit token request from user {current_user}")
-
+    room_name = f"voice_{uuid4().hex}"
     token = (
         api.AccessToken(settings.LIVEKIT_API_KEY, settings.LIVEKIT_API_SECRET)
         .with_identity(f"user_{current_user.username}")
@@ -26,7 +26,7 @@ async def chat_completions(
         .with_grants(
             api.VideoGrants(
                 room_join=True,
-                room=current_user.username,
+                room=room_name,
                 can_publish=True,
                 can_subscribe=True
             )
@@ -34,4 +34,4 @@ async def chat_completions(
         .to_jwt()
     )
 
-    return LivekitToken(token=token, room_name=current_user.username)
+    return LivekitToken(token=token, room_name=room_name)
