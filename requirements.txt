@@ -29,6 +29,7 @@ torch==2.7.1
 fastmcp==2.3.0
 langsmith==0.3.45
 langchain-mcp-adapters==0.1.7
+langchain-ollama==0.2.3
 # Tavily
 tavily-python==0.7.8
 # Firecrawl
@@ -37,4 +38,6 @@ firecrawl-py==2.9.0
 # MEM0
 mem0ai==0.1.107
 
-groq
+
+livekit-plugins-groq==1.1.1
+groq==1.7.0
