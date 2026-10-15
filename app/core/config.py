@@ -39,10 +39,10 @@ class Settings(BaseSettings):
     SQLALCHEMY_DATABASE_URI: str = "sqlite:///./app.db"
 
     LANGCHAIN_TRACING_V2: bool = 'true'
-    LANGSMITH_ENDPOINT: str = "https: // api.smith.langchain.com"
-    LANGSMITH_API_KEY: str= "********"
+    LANGSMITH_ENDPOINT: str = "https://api.smith.langchain.com"
+    LANGSMITH_API_KEY: str= ""
     LANGSMITH_PROJECT: str = "pr-only-surround-27"
-
+    OLLAMA_BASE_URL: str = "http://localhost:11434"
     QDRANT_PORT: int = 6333
     QDRANT_HOST: str = "localhost"
     

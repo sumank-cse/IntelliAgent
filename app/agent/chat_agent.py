@@ -82,7 +82,7 @@ class AISupport:
                 "config": {
                     "model": "nomic-embed-text",
                     "embedding_dims": 768,
-                    "ollama_base_url": "http://localhost:11434"
+                    "ollama_base_url": settings.OLLAMA_BASE_URL
                 }
             },
             "vector_store": {

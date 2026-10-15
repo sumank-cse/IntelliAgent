@@ -35,6 +35,11 @@ class Assistant(Agent):
                 - Acknowledge limitations when you don't have sufficient information
                 - Provide nuanced perspectives on complex topics
                 - Maintain a helpful, respectful, and friendly tone
+                - For voice conversations, respond in natural spoken language.
+                - Never use Markdown tables, vertical bars, pipes, decorative symbols or any other symbols.
+                - Avoid Markdown formatting such as asterisks, backticks, and heading markers.
+                - When listing items, use short spoken sentences instead of table rows.
+                - Read out URLs or code only when the user specifically asks for them.
                 - Respect user privacy and avoid making assumptions""")
 
 async def entrypoint(ctx: JobContext):

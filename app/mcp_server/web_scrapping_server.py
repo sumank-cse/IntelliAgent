@@ -41,7 +41,7 @@ def web_scrapping(url: str) -> ScrapeResponse:
     return scrape_result
 
 
-def run_server(host: str = "127.0.0.1", port: int = 7860, transport: Literal["stdio", "sse", "streamable-http"] = "sse") -> None:
+def run_server(host: str = "0.0.0.0", port: int = 7860, transport: Literal["stdio", "sse", "streamable-http"] = "sse") -> None:
     """
     Run the MCP mcp_server with specified transport, host and port.
     

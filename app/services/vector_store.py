@@ -32,10 +32,7 @@ class MultiTenantVectorStore:
     def __init__(
         self,
         collection_name: str = "multi_tenant_chat_history",
-        embedding: Optional[Embeddings] = OllamaEmbeddings(
-            model="nomic-embed-text",
-            base_url="http://localhost:11434"
-            ),
+        embedding: Optional[Embeddings] = None,
     ):
         """Initialize the multi-tenant vector store.
         
@@ -48,7 +45,10 @@ class MultiTenantVectorStore:
         self.client = QdrantClient(settings.QDRANT_HOST, port=settings.QDRANT_PORT)
         self.collection_name = collection_name
         self.embedding_size = 768
-        self.embedding = embedding
+        self.embedding = embedding or OllamaEmbeddings(
+            model="nomic-embed-text",
+            base_url=settings.OLLAMA_BASE_URL,
+        )
 
         self._ensure_collection_exists()
         self._initialized = True
