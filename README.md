@@ -261,3 +261,4 @@ npm start
 - Frontend interface: http://localhost:3000
 
 If you don't have an account, register first and then log in to access the chat interface.
+CodeLensAI integration test.
