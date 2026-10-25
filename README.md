@@ -1,7 +1,6 @@
 # 🤖 FastAPI Langgraph Chatbot with Vector Store, Memory, MCP tools and Voice mode
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]() 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![GitHub release](https://img.shields.io/badge/release-v1.0.0-blue)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg?logo=fastapi)](https://fastapi.tiangolo.com)
 [![LangGraph](https://img.shields.io/badge/LangGraph-orange.svg)](https://github.com/langchain-ai/langgraph)
